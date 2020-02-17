@@ -1,0 +1,46 @@
+var scores = [80,70,60,40,30,100,90];
+
+//first item of the array because array index start from 0
+console.log(scores[0]);
+//3rd item
+console.log(scores[2]);
+//how many items in an array
+console.log(scores.length);
+//add at the end
+scores.push(99);
+console.log(scores);
+//remove the last item
+scores.pop();
+console.log(scores);
+// print all the items individually in console
+for (var i = 0; i < scores.length; i++){
+  console.log(scores[i]);
+}
+
+// Redo minmaxAvg but this time, accept an array as parameter
+// [10,4,2,10,12];
+// - [2,12,avg]
+
+function minMaxAvg(arr){
+  var sum = 0;
+  var max = arr[0];
+  var min = arr[0];
+  for (var i = 0 ; i < arr.length ; i++){
+    sum = sum + arr[i];
+  }
+  for (var i = 1; i < arr.length ; i++){
+    if (arr[i] > max){
+      max = arr[i];
+    }  
+  }
+  for (var i = 1; i < arr.length ; i++){
+    if (arr[i] < min){
+      min = arr[i];
+    }
+  }
+  var avg = sum/arr.length;
+  return [min,max,avg];
+
+}
+console.log(minMaxAvg([10,4,2,12,8]));
+console.log(minMaxAvg([3,5,12,7]));
